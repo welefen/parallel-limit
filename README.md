@@ -57,7 +57,7 @@ instance.addAll(['welefen', 'suredy'], true).then(function(data){
 })
 ```
 
-### addAll(callbackList)
+### addAll(callbackList, ignoreError)
 
 ```
 var instance = parallelLimit(5);
