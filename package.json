@@ -1,7 +1,7 @@
 {
-  "name": "thinkjs",
-  "description": "A Node.js MVC Web Framework Based On Promise",
-  "version": "1.1.6",
+  "name": "parallel-limit",
+  "description": "parallels task limited based on Promise",
+  "version": "2.0.0",
   "author": {
     "name": "welefen",
     "email": "welefen@gmail.com"
@@ -26,24 +26,18 @@
     "istanbul": "*"
   },
   "keywords": [
-    "thinkjs",
-    "framework",
-    "web",
-    "rest",
-    "restful",
-    "router",
-    "app",
-    "api"
+    "paralles",
+    "limit",
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/welefen/thinkjs"
+    "url": "https://github.com/welefen/parallel-limit"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/welefen/thinkjs/issues"
+    "url": "https://github.com/welefen/parallel-limit/issues"
   }
 }
