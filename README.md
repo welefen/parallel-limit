@@ -1,6 +1,6 @@
 # parallel-limit
 
-Node.js下基于Promise的并发执行任何限制模块。
+parallels task limited based on Promise.
 
 ## install
 
@@ -14,22 +14,21 @@ npm install parallel-limit
 var parallelLimit = require('parallel-limit');
 ```
 
+### get instance
+
+```
+var instance = parallelLimit(limitNums, callback);
+```
+
+* `limitNums` limit nums, default: 10
+* callback 
+
 ## API
-
-### limit
-
-```
-//限制一次最大执行条数为5条
-var instance = parallelLimit(5, function(){
-    
-});
-```
 
 ### add(data)
 
 ```
 var instance = parallelLimit(function(data){
-    //异步执行某个逻辑，然后返回promise
     return Promise.resolve(xxx);
 });
 instance.add('welefen').then(function(data){
@@ -42,7 +41,6 @@ instance.add('welefen').then(function(data){
 ```
 var instance = parallelLimit();
 instance.add(function(data){
-    //异步执行某个代码，并返回promise
     return Promise.resolve(xxx);
 })
 ```
@@ -51,12 +49,11 @@ instance.add(function(data){
 
 ```
 var instance = parallelLimit(5, function(data){
-    //异步执行某个代码，并返回promise
     return Promise.resolve(xxx);
 });
-//忽略某个promise执行报错
+//ignore promise errors
 instance.addAll(['welefen', 'suredy'], true).then(function(data){
-    //所有任务都执行完成后的回调
+    //all task finished
 })
 ```
 
@@ -64,12 +61,11 @@ instance.addAll(['welefen', 'suredy'], true).then(function(data){
 
 ```
 var instance = parallelLimit(5);
-//忽略某个promise执行报错
 instance.addAll([function(data){
     return Promise.resolve(xxx);
 }, function(data){
     return Promise.resolve(yyy);
 }]).then(function(data){
-    //所有任务都执行完成后的回调
+    //all task finished
 })
 ```
