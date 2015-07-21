@@ -17,7 +17,7 @@ var parallelLimit = require('parallel-limit');
 ### get instance
 
 ```
-var instance = parallelLimit(limitNums, callback);
+var instance = new parallelLimit(limitNums, callback);
 ```
 
 * `limitNums` limit nums, default: 10
@@ -40,8 +40,10 @@ instance.add('welefen').then(function(data){
 ### add(callback)
 ```
 var instance = parallelLimit();
-instance.add(function(data){
+instance.add(function(){
     return Promise.resolve(xxx);
+}).then(function(data){
+
 })
 ```
 
