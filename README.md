@@ -28,7 +28,7 @@ var instance = new parallelLimit(limitNums, callback);
 ### add(data)
 
 ```
-var instance = parallelLimit(function(data){
+var instance = new parallelLimit(function(data){
     return Promise.resolve(xxx);
 });
 instance.add('welefen').then(function(data){
@@ -39,7 +39,7 @@ instance.add('welefen').then(function(data){
 
 ### add(callback)
 ```
-var instance = parallelLimit();
+var instance = new parallelLimit();
 instance.add(function(){
     return Promise.resolve(xxx);
 }).then(function(data){
@@ -50,7 +50,7 @@ instance.add(function(){
 ### addAll(dataList, ignoreError)
 
 ```
-var instance = parallelLimit(5, function(data){
+var instance = new parallelLimit(5, function(data){
     return Promise.resolve(xxx);
 });
 //ignore promise errors
@@ -62,7 +62,7 @@ instance.addAll(['welefen', 'suredy'], true).then(function(data){
 ### addAll(callbackList, ignoreError)
 
 ```
-var instance = parallelLimit(5);
+var instance = new parallelLimit(5);
 instance.addAll([function(data){
     return Promise.resolve(xxx);
 }, function(data){
